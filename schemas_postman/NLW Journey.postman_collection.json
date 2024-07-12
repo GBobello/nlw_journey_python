@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "38ed1b4e-ecbf-4b6f-9c10-dd26eebf2d48",
+		"name": "NLW Journey",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19423021"
+	},
+	"item": [
+		{
+			"name": "Trips",
+			"item": [
+				{
+					"name": "CREATE TRIP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"destination\": \"TESTE\",\r\n  \"start_date\": \"01-08-2024\",\r\n  \"end_date\": \"08-08-2024\",\r\n  \"owner_name\": \"Gabriel Bobello\",\r\n  \"owner_email\": \"test@email.com\",\r\n  \"emails_to_invite\": [\r\n    \"hello_world@email.com\",\r\n    \"danylosi15@gmail.com\",\r\n    \"bobello.sci@gmail.com\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/trips",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TRIPS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/trips/:tripId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								":tripId"
+							],
+							"variable": [
+								{
+									"key": "tripId",
+									"value": "81ef0b6b-cc6f-4a3f-90ec-8e596ad7e53c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONFIRM TRIP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/trips/:tripId/confirm",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								":tripId",
+								"confirm"
+							],
+							"variable": [
+								{
+									"key": "tripId",
+									"value": "81ef0b6b-cc6f-4a3f-90ec-8e596ad7e53c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Links",
+			"item": [
+				{
+					"name": "CREATE LINKS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"url\": \"bobello.com.br\",\r\n  \"title\": \"Gabriel Bobello\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/trips/:tripId/links",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								":tripId",
+								"links"
+							],
+							"variable": [
+								{
+									"key": "tripId",
+									"value": "85e1e9c0-6978-45c7-8832-26431619ab30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LINKS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/trips/:tripId/links",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								":tripId",
+								"links"
+							],
+							"variable": [
+								{
+									"key": "tripId",
+									"value": "85e1e9c0-6978-45c7-8832-26431619ab30"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Participants",
+			"item": [
+				{
+					"name": "CREATE INVITES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Daniely\",\r\n  \"email\": \"danylosi15@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/trips/:tripId/invites",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								":tripId",
+								"invites"
+							],
+							"variable": [
+								{
+									"key": "tripId",
+									"value": "85e1e9c0-6978-45c7-8832-26431619ab30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PARTICIPANTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/trips/:tripId/participants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								":tripId",
+								"participants"
+							],
+							"variable": [
+								{
+									"key": "tripId",
+									"value": "85e1e9c0-6978-45c7-8832-26431619ab30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONFIRM PARTICIPANTS",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/participants/:participant_id/confirm",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"participants",
+								":participant_id",
+								"confirm"
+							],
+							"variable": [
+								{
+									"key": "participant_id",
+									"value": "39acdf07-6e7e-4d63-8dd4-54d4a594284c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "CREATE ACTIVITIES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Ir na torre Waffle\",\r\n  \"occurs_at\": \"12-07-2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/trips/:tripId/activities",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								":tripId",
+								"activities"
+							],
+							"variable": [
+								{
+									"key": "tripId",
+									"value": "85e1e9c0-6978-45c7-8832-26431619ab30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ACTIVITIES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/trips/:tripId/activities",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								":tripId",
+								"activities"
+							],
+							"variable": [
+								{
+									"key": "tripId",
+									"value": "85e1e9c0-6978-45c7-8832-26431619ab30"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "127.0.0.1:3000",
+			"type": "string"
+		}
+	]
+}
